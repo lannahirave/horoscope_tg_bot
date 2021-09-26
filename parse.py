@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 
 types = 'general love family career health tinager flirt amigos'.split()
-signs_zodiac = 'aries gemini taurus cancer lion capricorn aquarius pisces virgo libra scorpius sagittarius'.split()
+signs_zodiac = 'aries gemini taurus cancer lion capricorn aquarius pisces virgo libra scorpio sagittarius'.split()
 days = 'yesterday today tomorrow week month year'.split()
 types_ru = 'Общий Любовный Семейный Карьерный Здоровье Тинейджер Флирт Амигос'.split()
 signs_zodiac_ru = 'Овен Близнецы Телец Рак Лев Козерог Водолей Рыбы Дева Весы Скорпион Стрелец'.split()
@@ -16,7 +16,7 @@ def parse_zodiac1(type: str,  sign: str, day: str,):
         type, sign, day = translate_ru_to_eng(type, sign, day)
     if type not in types or sign not in signs_zodiac or day not in days:
         print(type, sign, day)
-        return "Sth wrong"
+        return "Что-то пошло не так."
     link = f'https://orakul.com/horoscope/astrologic/{type}/{sign}/{day}.html'
     url = requests.get(link)
     soup = BeautifulSoup(url.text, 'html.parser')
