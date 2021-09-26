@@ -43,10 +43,9 @@ def main():
 
     random.seed(time.time())
     current_time = time.time()
-    k = 10
+    k = 1
     while k > 0:
-        a, b, c = random.choice(types_ru), random.choice(
-            signs_zodiac_ru), random.choice(days_ru)
+        a, b, c = random.choice(types_ru),random.choice(signs_zodiac_ru), random.choice(days_ru)
         print(parse_zodiac1(a, b, c))
         print(a, b, c)
         time.sleep(0.05)

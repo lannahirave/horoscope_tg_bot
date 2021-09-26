@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-token = 'API_TOKEN'
+from os import getenv
+token = getenv('token_horoscope')
 
 types = 'Общий Любовный Семейный Карьерный Здоровье Тинейджер Флирт Амигос'.split()
 signs_zodiac = 'Овен Близнецы Телец Рак Лев Козерог Водолей Рыбы Дева Весы Скорпион Стрелец'.split()
