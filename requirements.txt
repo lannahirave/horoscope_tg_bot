@@ -1,3 +1,2 @@
-python
 aiogram==2.15
 BeautifulSoup==3.2.2
