@@ -1,0 +1,5 @@
+python==3.9
+aiogram==2.15
+BeautifulSoup==3.2.2
+asyncio==3.4.3
+logging==0.4.9.6
