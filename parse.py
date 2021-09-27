@@ -20,17 +20,18 @@ def parse_zodiac1(type: str,  sign: str, day: str,):
     link = f'https://orakul.com/horoscope/astrologic/{type}/{sign}/{day}.html'
     url = requests.get(link)
     soup = BeautifulSoup(url.text, 'html.parser')
-    text = ''
-
+    text = '<code>'
     prognosis = soup.find('h2', class_='typehead')
     if prognosis != None:
-        for i in prognosis.text.rstrip():
+        for i in prognosis.text.strip():
             text += i
-        text += '\n'
+        text += '</code>\n'
         for i in prognosis.parent.next_sibling.find_next('p', class_='').text.rsplit():
             text += i + ' '
     if text == '':
         text = 'К сожалению, такого гороскопа нет ;('
+    while '  ' in text:
+        text = text.replace('  ', '')
     return text
 
 
