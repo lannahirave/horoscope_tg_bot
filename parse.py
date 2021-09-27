@@ -29,6 +29,8 @@ def parse_zodiac1(type: str,  sign: str, day: str,):
         text += '\n'
         for i in prognosis.parent.next_sibling.find_next('p', class_='').text.rsplit():
             text += i + ' '
+    if text == '':
+        text = 'К сожалению, такого гороскопа нет ;('
     return text
 
 
